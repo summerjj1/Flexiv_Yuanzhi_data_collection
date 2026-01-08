@@ -75,16 +75,16 @@ pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 1. **连接硬件**: 确保 GELLO 手柄已连接 USB，并获得权限。
 2. **启动采集**:
 ```bash
-cd gello/data_collection_v2/back
+cd gello/data_collection_v2/zhq_gello_v4.py
 # 需替换为实际的机械臂 IP 和本机 IP
-python teleop_gello_imx415_h5_impedance.py --robot_ip 192.168.2.100 --local_ip 192.168.2.10
+python zhq_gello_v4.py 
 
 ```
 
 
 3. **操作说明**:
-* 按 `Space` 开始/暂停录制。
-* 按 `Esc` 或 `q` 退出程序。
+* 按 ` i开始/暂停录制。
+* 按 `b`` 保存数据。
 
 
 
@@ -104,7 +104,7 @@ cd umi/release-1119
 # 安装 Python 依赖
 bash install-python.sh
 
-# 安装 ROS2 (如果使用 ROS2 通信)
+# 安装 ROS1 (如果使用 ROS2 通信)
 bash install-ros2.sh
 
 # 安装 XVisio/Vive 驱动 (.deb 包)
