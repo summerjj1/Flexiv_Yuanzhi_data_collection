@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gello_flexiv_urdf_v1">
+   <link name="world" />
+   <joint name="joint0" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0359314244197203 -0.108168163884002 -0.521217783026658"
+        rpy="0 0 0" />
+      <mass
+        value="0.140781229185535" />
+      <inertia
+        ixx="9.57436302937678E-05"
+        ixy="-1.03738838317992E-06"
+        ixz="3.48564950250387E-05"
+        iyy="0.000276934775246851"
+        iyz="1.32094089368797E-07"
+        izz="0.000328420600123338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-4.21087792010482E-06 0.0352132800172582 -4.13863388004643E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.0621984978756423" />
+      <inertia
+        ixx="2.62615211798585E-05"
+        ixy="-5.99006972017282E-08"
+        ixz="-2.08797393783405E-13"
+        iyy="1.99124702914227E-05"
+        iyz="-5.88732697238256E-15"
+        izz="2.83859325635614E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.0044059 -0.10829 -0.48722"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.0003472536027362 0.0493318151135988 0.0173567708489257"
+        rpy="0 0 0" />
+      <mass
+        value="0.0634542150680963" />
+      <inertia
+        ixx="5.32681967201861E-05"
+        ixy="-1.06531856297077E-08"
+        ixz="4.32227402949667E-09"
+        iyy="1.39386634834845E-05"
+        iyz="2.2828894286374E-06"
+        izz="5.14095077712621E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.0255499999631193 0.0863137010999193 0.00037524429995113"
+      rpy="3.14159265358979 -1.57079623022433 3.14159265358979" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.0110147556765994 -0.0251055213097105 0.0905380752413542"
+        rpy="0 0 0" />
+      <mass
+        value="0.0814089715061094" />
+      <inertia
+        ixx="7.72995857245644E-05"
+        ixy="6.72258721269139E-06"
+        ixz="7.26124075909314E-06"
+        iyy="5.52206392754173E-05"
+        iyz="-1.93732755388308E-05"
+        izz="3.93655693951892E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="-0.000717150565838778 0.232165887477301 -0.00683035512191994"
+      rpy="-1.5707963267949 -0.101541647897608 3.14159265358979" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-0.00951429740804757 0.050153248787581 0.0485868077238826"
+        rpy="0 0 0" />
+      <mass
+        value="0.0804811136972273" />
+      <inertia
+        ixx="8.58820513269053E-05"
+        ixy="4.20198162991998E-06"
+        ixz="3.31438031897929E-06"
+        iyy="2.73658393714511E-05"
+        iyz="-1.33984626682826E-05"
+        izz="7.70209370048256E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="0.016367 -0.055457 0.028164"
+      rpy="-1.5708 -0.00231 0.10154" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.000359305064668608 0.0105379298988883 0.0604712260326171"
+        rpy="0 0 0" />
+      <mass
+        value="0.0474913987427725" />
+      <inertia
+        ixx="3.02868102602833E-05"
+        ixy="-7.24541664460614E-09"
+        ixz="-4.99627657978264E-09"
+        iyy="2.84148264822456E-05"
+        iyz="1.69599620189933E-06"
+        izz="1.33789418295341E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="continuous">
+    <origin
+      xyz="-0.01086 0.085925 0.032403"
+      rpy="-1.5708 0 0.00231" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.00593553356315217 0.0548375259281318 0.127547629959975"
+        rpy="0 0 0" />
+      <mass
+        value="0.101556527676673" />
+      <inertia
+        ixx="6.92163825878117E-05"
+        ixy="1.69198658003818E-06"
+        ixz="-2.22230680189455E-07"
+        iyy="5.26180630079918E-05"
+        iyz="3.31757389156783E-06"
+        izz="5.25562821930294E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="continuous">
+    <origin
+      xyz="-0.00071715 -0.1243 0.11271"
+      rpy="1.5708 0.10154 -3.1416" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="0.0367531932113658 0.00126872969572463 0.0815484226026311"
+        rpy="0 0 0" />
+      <mass
+        value="0.0968831090631678" />
+      <inertia
+        ixx="3.22005389895365E-05"
+        ixy="1.81571702408365E-05"
+        ixz="-1.76161283626439E-05"
+        iyy="0.000173175408165016"
+        iyz="2.88404944118258E-06"
+        izz="0.000181477835025478" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_flexiv_urdf_v1/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="continuous">
+    <origin
+      xyz="0.0015572 0.060476 0.12001"
+      rpy="-3.1416 0 -1.4693" />
+    <parent
+      link="link6" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+</robot>

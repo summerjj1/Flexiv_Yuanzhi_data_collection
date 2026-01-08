@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gello.SLDASM">
+  <link name="world" />
+   <joint name="joint0" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.031526 -0.013296 -0.00012173"
+        rpy="0 0 0" />
+      <mass
+        value="0.14078" />
+      <inertia
+        ixx="9.5744E-05"
+        ixy="3.4856E-05"
+        ixz="1.0374E-06"
+        iyy="0.00032842"
+        iyz="-1.3209E-07"
+        izz="0.00027693" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor1">
+    <inertial>
+      <origin
+        xyz="-0.0033744 0.0052688 0.010588"
+        rpy="0 0 0" />
+      <mass
+        value="0.019191" />
+      <inertia
+        ixx="2.4812E-06"
+        ixy="5.2284E-07"
+        ixz="5.866E-09"
+        iyy="1.9967E-06"
+        iyz="-9.0264E-09"
+        izz="4.0629E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix1"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -2.1405" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-4.2109E-06 0.035213 -7.0258E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.062198" />
+      <inertia
+        ixx="2.6262E-05"
+        ixy="-5.9901E-08"
+        ixz="-8.5956E-22"
+        iyy="1.9912E-05"
+        iyz="-2.6541E-22"
+        izz="2.8386E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0188"
+      rpy="1.5708 0 2.1405" />
+    <parent
+      link="motor1" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor2">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7901E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3666E-09"
+        iyy="2.5735E-06"
+        iyz="7.1383E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix2"
+    type="fixed">
+    <origin
+      xyz="0.0096 0.0632 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="link1" />
+    <child
+      link="motor2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.00034725 -0.049332 -0.017357"
+        rpy="0 0 0" />
+      <mass
+        value="0.063454" />
+      <inertia
+        ixx="5.3268E-05"
+        ixy="1.0653E-08"
+        ixz="-4.3223E-09"
+        iyy="1.3939E-05"
+        iyz="2.2829E-06"
+        izz="5.141E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="-0.023114 0.01595 0.00037524"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="motor2" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor3">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7568E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3665E-09"
+        iyy="2.5735E-06"
+        iyz="7.1331E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix3"
+    type="fixed">
+    <origin
+      xyz="-0.00034191 -0.10957 -0.016283"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="link2" />
+    <child
+      link="motor3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.011015 -0.025106 0.090538"
+        rpy="0 0 0" />
+      <mass
+        value="0.081409" />
+      <inertia
+        ixx="7.73E-05"
+        ixy="6.7226E-06"
+        ixz="7.2612E-06"
+        iyy="5.5221E-05"
+        iyz="-1.9373E-05"
+        izz="3.9366E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="-0.023114 0.1226 0.00037524"
+      rpy="1.5708 -1.4693 0" />
+    <parent
+      link="motor3" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor4">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7903E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3666E-09"
+        iyy="2.5735E-06"
+        iyz="7.1383E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix4"
+    type="fixed">
+    <origin
+      xyz="0.012548 -0.02162 0.051277"
+      rpy="3.0401 -1.5708 0" />
+    <parent
+      link="link3" />
+    <child
+      link="motor4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-0.0095143 0.050153 0.048587"
+        rpy="0 0 0" />
+      <mass
+        value="0.080481" />
+      <inertia
+        ixx="8.5882E-05"
+        ixy="4.202E-06"
+        ixz="3.3144E-06"
+        iyy="2.7366E-05"
+        iyz="-1.3398E-05"
+        izz="7.7021E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="-0.023113 -0.03405 -0.00036973"
+      rpy="-1.5708 1.5685 0" />
+    <parent
+      link="motor4" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor5">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7903E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3666E-09"
+        iyy="2.5735E-06"
+        iyz="7.1383E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix5"
+    type="fixed">
+    <origin
+      xyz="-0.011314 0.12007 0.055517"
+      rpy="3.1393 -1.5708 0" />
+    <parent
+      link="link4" />
+    <child
+      link="motor5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00035931 -0.010538 -0.060471"
+        rpy="0 0 0" />
+      <mass
+        value="0.047491" />
+      <inertia
+        ixx="3.0287E-05"
+        ixy="7.2454E-09"
+        ixz="4.9963E-09"
+        iyy="2.8415E-05"
+        iyz="1.696E-06"
+        izz="1.3379E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="-0.023114 -0.03415 -0.00037524"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="motor5" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor6">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7903E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3666E-09"
+        iyy="2.5735E-06"
+        iyz="7.1383E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix6"
+    type="fixed">
+    <origin
+      xyz="-0.00034191 0.001647 -0.089601"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="link5" />
+    <child
+      link="motor6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.0059355 0.054838 0.12755"
+        rpy="0 0 0" />
+      <mass
+        value="0.10156" />
+      <inertia
+        ixx="6.9216E-05"
+        ixy="1.692E-06"
+        ixz="-2.2223E-07"
+        iyy="5.2618E-05"
+        iyz="3.3176E-06"
+        izz="5.2556E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="-0.023114 0.12265 0.00037524"
+      rpy="1.5708 -1.4693 0" />
+    <parent
+      link="motor6" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor7">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7568E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3665E-09"
+        iyy="2.5735E-06"
+        iyz="7.1331E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix7"
+    type="fixed">
+    <origin
+      xyz="0.0030642 0.060931 0.09581"
+      rpy="1.6723 -1.5708 0" />
+    <parent
+      link="link6" />
+    <child
+      link="motor7" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="0.036753 0.0012687 0.081548"
+        rpy="0 0 0" />
+      <mass
+        value="0.096883" />
+      <inertia
+        ixx="3.2201E-05"
+        ixy="1.8157E-05"
+        ixz="-1.7616E-05"
+        iyy="0.00017318"
+        iyz="2.884E-06"
+        izz="0.00018148" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="0.024203 -0.0015403 -0.00029672"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="motor7" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+  <link
+    name="motor8">
+    <inertial>
+      <origin
+        xyz="-0.015378 -0.0078109 2.7568E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.011863" />
+      <inertia
+        ixx="8.3725E-07"
+        ixy="-1.0765E-08"
+        ixz="-1.3665E-09"
+        iyy="2.5735E-06"
+        iyz="7.1331E-11"
+        izz="1.9897E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/motor8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix8"
+    type="fixed">
+    <origin
+      xyz="-0.00029672 -0.0015403 0.089423"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="link7" />
+    <child
+      link="motor8" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link8">
+    <inertial>
+      <origin
+        xyz="-0.022889 0.00055 -0.0088614"
+        rpy="0 0 0" />
+      <mass
+        value="0.0051415" />
+      <inertia
+        ixx="4.89E-07"
+        ixy="1.8446E-13"
+        ixz="-6.2408E-07"
+        iyy="2.736E-06"
+        iyz="-5.8835E-14"
+        izz="2.2862E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello.SLDASM/meshes/link8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint8"
+    type="revolute">
+    <origin
+      xyz="-0.0255 -0.0303 0"
+      rpy="3.1416 -1.5682 0" />
+    <parent
+      link="motor8" />
+    <child
+      link="link8" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="500"
+      velocity="10" />
+  </joint>
+</robot>

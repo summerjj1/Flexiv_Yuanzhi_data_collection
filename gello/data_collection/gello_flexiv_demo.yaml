@@ -1,0 +1,68 @@
+name: right
+
+dynamixel:
+  # USB port name given by the command: ls /dev/serial/by-id/
+  dynamixel_port: "usb-FTDI_USB__-__Serial_Converter_FTAHGC3M-if00-port0"
+  #dynamixel_port: "usb-FTDI_USB__-__Serial_Converter_FTAD4FXU-if00-port0"
+  #usb-FTDI_USB__-__Serial_Converter_FTAD4FXU-if00-port0
+  # Servo types
+  servo_types: [
+    "XC330_T288_T", "XM430_W210_T", "XC330_T288_T", "XM430_W210_T", 
+    "XC330_T288_T", "XC330_T288_T", "XC330_T288_T", "XC330_T288_T",
+  ]
+  # Servo joint directions to match that of the leader arm
+  joint_signs: [1, 1, 1, -1, 1, -1, 1, -1]
+  
+arm_teleop:
+  # URDF used for creating leader arm dynamics model to compute gravity compensation
+  leader_urdf_path: "~/code/FACTR_Teleop/src/factr_teleop/factr_teleop/urdf/factr_teleop_franka.urdf"
+  num_arm_joints: 7
+
+  # Todo: Joint limits for the follower arm to avoid singularities and collisions
+  arm_joint_limits_max: [2.8973, 1.7628, 2.8973, -0.8698, 2.8973, 3.7525, 2.8973]
+  arm_joint_limits_min: [-2.8973, -1.7628, -2.8973, -3.0718, -2.8973, -0.0175, -2.8973]
+  arm_joint_limits_safety_margin: 0.1
+
+  initialization:
+    # The expected leader arm joint position before launching the script
+    calibration_joint_pos: [0.0, -0.7854, 0.0, -2.356, 0.0, 1.57, 0.0]
+
+    # The leader arm must be brought to this joint position before the follower starts mirroring the leader
+    # initial_match_joint_pos: [0.0, -0.7854, 0.0, -2.356, 0.0, 1.57, 0.0]
+    initial_match_joint_pos: [0.0, -0.7854, 0.0, -1.356, 0.0, 1.57, 0.0]
+
+gripper_teleop:
+  # The maximum range (in rad) of the leader gripper trigger
+  actuation_range: 0.8
+
+controller:
+  frequency: 500
+  torque_feedback:
+    enable: True
+    gain: 3.0
+    damping: 0.0
+    motor_scalar: 94.5652173913
+  gravity_comp:
+    enable: True
+    gain: 0.85
+  null_space_regulation:
+    null_space_joint_target: [0.0, -0.7854, 0.0, -2.356, 0.0, 1.57, 0.0, 0.0]
+    kp: 0.1
+    kd: 0.01
+  static_friction_comp:
+    enable_speed: 0.9
+    gain: 0.6
+  joint_limit_barrier:
+    kp: 1.03561658022
+    kd: 0.04315069084
+  joint_position_control:
+    interpolation_step_size: 0.5
+    kp: 1.03561658022
+    kd: 0.04315069084
+
+  gripper_feedback:
+    enable: True
+    gain: 0.28328611898
+    ema_beta: 0.95
+
+
