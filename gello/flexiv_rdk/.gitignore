@@ -1,0 +1,12 @@
+.vscode
+.vs
+.DS_Store
+*.a
+*.so
+*.lib
+*.dll
+config.h
+build*/
+cloned/
+html/
+__pycache__

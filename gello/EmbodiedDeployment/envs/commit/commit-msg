@@ -1,0 +1,15 @@
+#!/bin/bash
+# Use `` to assign command output to a variable
+# Get the current commit message
+commit_msg=`cat $1`
+# Get user email
+email=`git config user.email`
+msg_re="^(feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|release|workflow)(\(.+\))?: .{1,100}"
+if [[ ! $commit_msg =~ $msg_re ]]
+then
+    echo -e "\nInvalid commit message format. Please use the correct format:\
+    \n<type>: msg\
+    \nFor details, please refer to the git commit convention: https://www.conventionalcommits.org/"
+    # Exit with error
+    exit 1
+fi

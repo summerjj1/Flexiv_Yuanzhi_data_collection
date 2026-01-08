@@ -1,0 +1,12 @@
+numpy
+scipy
+opencv-python
+pyrealsense2
+pyyaml
+loguru
+msgpack
+websockets
+fastapi
+uvicorn
+pydantic
+py-cpuinfo 

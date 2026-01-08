@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="force_gello_urdf">
+  <link name="world"/>
+  <joint name="joint0" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+
+  <!-- base_link -->
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0317019077856031 0.000122497816009815 0.0124338259109878"
+        rpy="0 0 0" />
+      <mass value="67.25" />
+      <inertia
+        ixx="0.045127497"
+        ixy="-0.000497221"
+        ixz="0.016234645"
+        iyy="0.131924386"
+        iyz="0.000061277"
+        izz="0.157329439" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- link1 -->
+  <link name="link1">
+    <inertial>
+      <origin
+        xyz="3.03020994149863E-05 0.00016374180285061 0.0239753807937216"
+        rpy="0 0 0" />
+      <mass value="18.04" />
+      <inertia
+        ixx="0.004132033"
+        ixy="-0.000002208"
+        ixz="-0.000033707"
+        iyy="0.004888524"
+        iyz="0.000310569"
+        izz="0.004679501" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="join1" type="continuous">
+    <origin xyz="0 0 0.0501" rpy="0 0 -1.57079632679" />
+    <parent link="base_link" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link2 -->
+  <link name="link2">
+    <inertial>
+      <origin
+        xyz="-0.0347685303838777 -1.35727831379085E-05 -0.0235315780840539"
+        rpy="0 0 0" />
+      <mass value="15.6" />
+      <inertia
+        ixx="0.003905395"
+        ixy="-0.000004534"
+        ixz="0.000025143"
+        iyy="0.009299602"
+        iyz="-0.000000091"
+        izz="0.007985754" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint2" type="continuous">
+    <origin xyz="0.0255 0 0.06786667" rpy="0 1.5707963267949 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link3 -->
+  <link name="link3">
+    <inertial>
+      <origin
+        xyz="0.00621142929683009 0.0184041501617898 0.00995822777672023"
+        rpy="0 0 0" />
+      <mass value="24.3" />
+      <inertia
+        ixx="0.026430932"
+        ixy="-0.001390066"
+        ixz="-0.002005179"
+        iyy="0.018548759"
+        iyz="-0.007654696"
+        izz="0.01165823" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3" type="continuous">
+    <origin
+      xyz="-0.0891650146194216 0 0.00231333000000002"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link4 -->
+  <link name="link4">
+    <inertial>
+      <origin
+        xyz="-0.0056615029518119 -0.0322004124361468 0.0123421466030631"
+        rpy="0 0 0" />
+      <mass value="13.1" />
+      <inertia
+        ixx="0.009925968"
+        ixy="-0.000830187"
+        ixz="-0.000534387"
+        iyy="0.004715315"
+        iyz="-0.002728009"
+        izz="0.007593238" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4" type="continuous">
+    <origin
+      xyz="0.00850666380206562 0.00231334175953646 0.0740349853805785"
+      rpy="-1.5707963267949 0 0" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link5 -->
+  <link name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00528527800387003 5.0064676190978E-06 0.0290932539408084"
+        rpy="0 0 0" />
+      <mass value="16.3" />
+      <inertia
+        ixx="0.012577227"
+        ixy="-0.000000429"
+        ixz="-0.000588027"
+        iyy="0.012002534"
+        iyz="0.000000044"
+        izz="0.003500665" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5" type="continuous">
+    <origin
+      xyz="-0.008506667 -0.0789331801981524 0.021046667"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link6 -->
+  <link name="link6">
+    <inertial>
+      <origin
+        xyz="-6.59219054577203E-07 0.0383145431149022 -0.00220958689963641"
+        rpy="0 0 0" />
+      <mass value="14.91" />
+      <inertia
+        ixx="0.009406079"
+        ixy="0.000000538"
+        ixz="0.000000674"
+        iyy="0.006387543"
+        iyz="-0.002234883"
+        izz="0.004502388" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="jonit6" type="continuous">
+    <origin
+      xyz="0.0135466670000058 0 0.0800001198018476"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent link="link5" />
+    <child link="link6" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link7 -->
+  <link name="link7">
+    <inertial>
+      <origin
+        xyz="0.0280387804523955 -0.0100778690942196 0.0157666007372195"
+        rpy="0 0 0" />
+      <mass value="18.5" />
+      <inertia
+        ixx="0.007771143"
+        ixy="0.000477751"
+        ixz="-0.005568384"
+        iyy="0.024887228"
+        iyz="-0.00019489"
+        izz="0.018855311" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint7" type="continuous">
+    <origin
+      xyz="0.0180000000000007 0.0469333300000001 0.0437119999999942"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent link="link6" />
+    <child link="link7" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- link8 -->
+  <link name="link8">
+    <inertial>
+      <origin
+        xyz="0.00631459336826165 -0.0133873198803782 -0.0015000015960715"
+        rpy="0 0 0" />
+      <mass value="2.4" />
+      <inertia
+        ixx="0.000462373"
+        ixy="0.000157533"
+        ixz="-9.7414E-11"
+        iyy="0.000125856"
+        iyz="-1.15147E-10"
+        izz="0.000584835" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link8.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/link8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint8" type="continuous">
+    <origin
+      xyz="0 -0.0224999999999999 0.0474999999999993"
+      rpy="1.57079632679491 -1.5707963267949 0" />
+    <parent link="link7" />
+    <child link="link8" />
+    <axis xyz="0 0 -1" />
+  </joint>
+
+  <!-- flange (no inertial given) -->
+  <link name="flange"/>
+  <joint name="link7_to_flange" type="fixed">
+    <parent link="link7" />
+    <child link="flange" />
+    <origin rpy="0 6.28318530718 0" xyz="0.0 0.0 0.03"/>
+  </joint>
+
+  <!-- motor7 -->
+  <link name="motor7">
+    <inertial>
+      <origin
+        xyz="-6.67089214811956E-06 -0.00663537074253837 0.0418258086254109"
+        rpy="0 0 0" />
+      <mass value="37.28" />
+      <inertia
+        ixx="0.003557032"
+        ixy="0.000000113"
+        ixz="0.000002699"
+        iyy="0.004684389"
+        iyz="-0.000005119"
+        izz="0.00161564" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor7" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link7" />
+    <child link="motor7" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor6 -->
+  <link name="motor6">
+    <inertial>
+      <origin
+        xyz="-0.00163537362274013 0.0469400021832104 0.0380378067925801"
+        rpy="0 0 0" />
+      <mass value="37.28" />
+      <inertia
+        ixx="0.004684389"
+        ixy="-0.000000113"
+        ixz="-0.000005119"
+        iyy="0.003557032"
+        iyz="-0.000002699"
+        izz="0.001615641" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor6" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link6" />
+    <child link="motor6" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor5 -->
+  <link name="motor5">
+    <inertial>
+      <origin
+        xyz="-0.00608870374254241 6.67089214718616E-06 0.074325928427259"
+        rpy="0 0 0" />
+      <mass value="37.28" />
+      <inertia
+        ixx="0.004684389"
+        ixy="-0.000000113"
+        ixz="-0.000005119"
+        iyy="0.003557032"
+        iyz="-0.000002699"
+        izz="0.00161564" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor5" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link5" />
+    <child link="motor5" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor4 -->
+  <link name="motor4">
+    <inertial>
+      <origin
+        xyz="-0.00849999610785278 -0.06579780945561 0.0153724756254114"
+        rpy="0 0 0" />
+      <mass value="37.28" />
+      <inertia
+        ixx="0.003557032"
+        ixy="0.000000113"
+        ixz="-0.000002699"
+        iyy="0.004684389"
+        iyz="0.000005119"
+        izz="0.00161564" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor4" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link4" />
+    <child link="motor4" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor3 -->
+  <link name="motor3">
+    <inertial>
+      <origin
+        xyz="0.00850635532374036 0.026024277087181 0.0639134006565433"
+        rpy="0 0 0" />
+      <mass value="84.19" />
+      <inertia
+        ixx="0.014120297"
+        ixy="0.0000005"
+        ixz="-0.000009697"
+        iyy="0.018263265"
+        iyz="-0.000076394"
+        izz="0.005941697" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor3" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link3" />
+    <child link="motor3" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor2 -->
+  <link name="motor2">
+    <inertial>
+      <origin
+        xyz="-0.0654540749700006 2.77823051320264E-07 -0.00780824820847558"
+        rpy="0 0 0" />
+      <mass value="84.19" />
+      <inertia
+        ixx="0.018263265"
+        ixy="-0.000000506"
+        ixz="-0.000076394"
+        iyy="0.014120298"
+        iyz="0.000009699"
+        izz="0.005941696" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor2" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link2" />
+    <child link="motor2" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor1 -->
+  <link name="motor1">
+    <inertial>
+      <origin
+        xyz="0.00178906467191881 -2.75700568299096E-07 0.0577450852759487"
+        rpy="0 0 0" />
+      <mass value="84.19" />
+      <inertia
+        ixx="0.018263265"
+        ixy="-0.000000506"
+        ixz="0.000076394"
+        iyy="0.014120297"
+        iyz="-0.000009698"
+        izz="0.005941697" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor1" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link1" />
+    <child link="motor1" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- motor0 -->
+  <link name="motor0">
+    <inertial>
+      <origin
+        xyz="0.0101215780965976 -2.79048657452126E-07 0.0298890612863422"
+        rpy="0 0 0" />
+      <mass value="84.19" />
+      <inertia
+        ixx="0.005941695"
+        ixy="0.000009699"
+        ixz="-0.000076394"
+        iyy="0.014120297"
+        iyz="-0.000000507"
+        izz="0.018263263" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor0.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/motor0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor0" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="motor0" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <!-- bearing -->
+  <link name="bearing">
+    <inertial>
+      <origin
+        xyz="7.95978145843504E-19 2.94331876864476E-16 0.048725844800912"
+        rpy="0 0 0" />
+      <mass value="20" />
+      <inertia
+        ixx="0.001952949"
+        ixy="4.52087E-34"
+        ixz="3.41863E-21"
+        iyy="0.001952949"
+        iyz="7.79968E-33"
+        izz="0.003724769" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/bearing.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://force_gello_urdf/meshes/bearing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="bearing" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="bearing" />
+    <axis xyz="0 0 1" />
+  </joint>
+</robot>
+

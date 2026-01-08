@@ -1,0 +1,25 @@
+chunk_size: 50
+real_eval_max_steps: 100000
+frame_rate: 15
+
+camera_config:
+  img_head_topic: '/camera/camera_h/color/image_rect_raw/compressed'
+  img_left_topic: '/camera/camera_l/color/image_rect_raw/compressed'
+  img_right_topic: '/camera/camera_r/color/image_rect_raw/compressed'
+
+  img_head_depth_topic: '/camera/camera_h/depth/image_rect_raw/compressed'
+  img_left_depth_topic: '/camera/camera_l/depth/image_rect_raw/compressed'
+  img_right_depth_topic: '/camera/camera_r/depth/image_rect_raw/compressed'
+
+arm_config:
+  controller_left_topic: '/arm_master_l_status'
+  controller_right_topic: '/arm_master_r_status'
+  feedback_left_topic: '/arm_slave_l_status'
+  feedback_right_topic: '/arm_slave_r_status'
+
+robot_base_config:
+  robot_base_topic: '/body_information'
+  robot_base_cmd_topic: '/body_control'
+
+joy_config:
+  joy_topic: '/arx_joy'

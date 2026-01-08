@@ -1,0 +1,133 @@
+site_name: EmbodiedDeployment
+site_description: One-step deployment framework for embodied intelligence
+site_author: Intern Robotics Edge Team
+site_url: https://gitee.pjlab.org.cn/L2/_source/L2/MultimodalVLA/EmbodiedDeployment
+
+# Repository
+repo_name: EmbodiedDeployment
+repo_url: https://gitee.pjlab.org.cn/L2/_source/L2/MultimodalVLA/EmbodiedDeployment
+edit_uri: edit/main/docs/
+
+# Theme
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/git-alt
+
+# Plugins
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_root_toc_entry: true
+            show_root_full_path: false
+            show_if_no_docstring: true
+            merge_init_into_class: true
+            show_signature_annotations: true
+            filters: []
+            selection:
+              docstring_style: google
+            rendering:
+              show_source: true
+              show_root_heading: true
+
+# Markdown extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+  - Tutorials:
+    - Overview: tutorials/index.md
+    - Robot Control: tutorials/robot-control.md
+    - Sensor Usage: tutorials/sensor-usage.md
+    - Policy Integration: tutorials/policy-integration.md
+  - API Reference:
+    - Overview: api/index.md
+    - Robot:
+      - Robot: api/robot/robot.md
+      - Robot Client: api/robot/robot_client.md
+      - Robot Server: api/robot/robot_server.md
+    - Controller:
+      - Base Controller: api/controller/controller.md
+      - Lift2 Controller: api/controller/lift2.md
+      - Acone Controller: api/controller/acone.md
+    - Sensor:
+      - Base Sensor: api/sensor/sensor.md
+      - Camera: api/sensor/camera.md
+    - Policy Client: api/policy-client.md
+    - Common Utilities: api/common-utils.md
+  - Architecture:
+    - Overview: architecture/overview.md
+    - Client System: architecture/client-system.md
+    - Robot System: architecture/robot-system.md
+    - Controller System: architecture/controller-system.md
+    - Sensor System: architecture/sensor-system.md
+  - Examples:
+    - Robot Examples: examples/robot-examples.md
+    - Pipeline Examples: examples/pipeline-examples.md
+  - Guides:
+    - Contributing: guides/contributing.md
+    - Documentation Guide: guides/documentation-guide.md
+    - API Documentation: guides/api-documentation.md
+    - Repository Structure: guides/repository-structure.md
+
+# Extra
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/git-alt
+      link: https://gitee.pjlab.org.cn/L2/_source/L2/MultimodalVLA/EmbodiedDeployment
+
+

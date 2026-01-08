@@ -1,0 +1,49 @@
+camera_config:
+  # Vision topics mapping: head→camera_f, left_wrist→camera_l, right_wrist→camera_r
+  original_image:
+    img_head_topic: '/camera_f/color/image_raw'
+    img_left_topic: '/camera_l/color/image_raw'
+    img_right_topic: '/camera_r/color/image_raw'
+
+    # Depth: only left/right depth pointcloud topics; front depth not provided
+    img_head_depth_topic: ''
+    img_left_depth_topic: '/camera_l/depth/points'
+    img_right_depth_topic: '/camera_r/depth/points'
+
+  compress_image:
+    img_head_topic: '/camera_f/color/image_raw/compressed'
+    img_left_topic: '/camera_l/color/image_raw/compressed'
+    img_right_topic: '/camera_r/color/image_raw/compressed'
+
+    img_head_depth_topic: ''
+    img_left_depth_topic: '/camera_l/color/image_raw/compressedDepth'
+    img_right_depth_topic: '/camera_r/color/image_raw/compressedDepth'
+
+arm_config:
+  # Master-side status (if using master/follower teleop)
+  master_arm_left_topic: '/master/joint_left'
+  master_arm_right_topic: '/master/joint_right'
+
+  # Puppet/follow joint status
+  follow_arm_left_topic: '/puppet/joint_left'
+  follow_arm_right_topic: '/puppet/joint_right'
+  master_gripper_arm_left_topic: '/puppet/joint_left'
+  master_gripper_arm_right_topic: '/puppet/joint_right'
+
+  # Joint control commands (position). Piper uses JointState on /master/joint_*
+  follow_arm_left_cmd_topic: '/master/joint_left'
+  follow_arm_right_cmd_topic: '/master/joint_right'
+
+  # End-effector feedback
+  follow_arm_left_eef_topic: '/puppet/end_pose_left'
+  follow_arm_right_eef_topic: '/puppet/end_pose_right'
+  follow_arm_left_eef_euler_topic: '/puppet/end_pose_euler_left'
+  follow_arm_right_eef_euler_topic: '/puppet/end_pose_euler_right'
+
+  # VR (if any)
+  master_VR_left_eef_topic: ''
+  master_VR_right_eef_topic: ''
+
+robot_base_config:
+  robot_base_topic: ''
+  robot_base_cmd_topic: ''

@@ -1,0 +1,78 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: check-added-large-files
+        args: ['--maxkb=500']
+        name: Check added large files.
+        entry: check-added-large-files 
+        language: system
+        exclude: 'media/SimHei.ttf'
+-   repo: local
+    hooks:
+    -   id: end-of-file-fixer
+        name: Fix end-of-file
+        entry: end-of-file-fixer
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: trailing-whitespace
+        name: Trailing whitespace
+        entry: trailing-whitespace-fixer
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: check-merge-conflict
+        name: Check merge conflict
+        entry: check-merge-conflict
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: check-docstring-first
+        name: Check docstring first
+        entry: check-docstring-first
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: isort
+        name: Check python imports.
+        entry: isort --filter-files
+        language: system
+        types: [python]
+        args: ["--profile", "black"]
+-   repo: local
+    hooks:
+    -   id: black
+        name: Auto format python code.
+        entry: black -l 79
+        language: system
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: flake8
+        name: Check pep8.
+        entry: flake8
+        language: system
+        exclude: (?x)(^tests/)
+        types: [python]
+-   repo: local
+    hooks:
+    -   id: pydocstyle
+        name: Check docstring.
+        entry: pydocstyle 
+        language: system
+        exclude: (?x)(^tests/|^docs/|^project/data_pipe/sim_sys2_data_pipe/|)
+        types: [python]
+-   repo: local
+    hooks:
+      - id: make-test
+        name: Run tests (make test)
+        entry: make test
+        language: system
+        pass_filenames: false
+        always_run: false
+        files: \.pyi?$           # 只改 Python 文件时触发
+        stages: [commit]

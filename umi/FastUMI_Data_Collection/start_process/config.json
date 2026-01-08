@@ -1,0 +1,10 @@
+{
+  "single_device": true,
+  "devices": {
+    "device_0": {
+      "label": "main",
+      "xv_serial": "250801DR48FP25002239",
+      "vive_serial": "LHR_9101A9B6"
+    }
+  }
+}
