@@ -25,7 +25,7 @@
 
 | 模块 | 核心特性 | 机械臂型号 | 遥操作设备 | 视觉/传感器 |
 | :--- | :--- | :--- | :--- | :--- |
-| **GELLO** | **关节映射**<br>低成本外骨骼方案 | Rizon 4s / 4 / 10 | 自制 GELLO 手柄<br>(Dynamixel 舵机) | Intel RealSense<br>IMX415 |
+| **GELLO** | **关节映射**<br>低成本外骨骼方案 | Rizon 4s / 4 / 10 | 自制 力反馈GELLO 手柄<br>(飞特舵机) | Intel RealSense<br>IMX415 |
 | **UMI** | **末端位姿 (6-DoF)**<br>手持通用夹爪 | Rizon 4s / 4 / 10 | UMI Gripper +<br>HTC Vive / XVisio | GoPro (鱼眼)<br>RealSense |
 
 ---
