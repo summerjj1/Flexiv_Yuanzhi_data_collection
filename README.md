@@ -21,19 +21,13 @@
 ## 📦 安装与环境配置 (Installation)
 
 ### 1. 基础环境与 LFS 配置
-本项目包含大量二进制文件（SDK、CAD 模型、驱动包、录制数据），**必须使用 Git LFS**。
 
-```bash
-# 1. 安装 Git LFS
-sudo apt-get update
-sudo apt-get install git-lfs
-git lfs install
 
-# 2. 克隆仓库
+# 1. 克隆仓库
 git clone [https://github.com/summerjj1/Flexiv_Yuanzhi_data_collection.git](https://github.com/summerjj1/Flexiv_Yuanzhi_data_collection.git)
 cd Flexiv_Yuanzhi_data_collection
 
-# 3. 拉取大文件 (特别是 umi/release-1119.zip)
+# 2. 拉取大文件 
 git lfs pull
 
 ```
@@ -61,6 +55,7 @@ pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 ### 3. Flexiv RDK 配置
 
 项目依赖非夕官方 SDK (`flexiv_rdk`) 进行底层控制。
+参考https://github.com/flexivrobotics/flexiv_rdk
 
 * 请参照 `flexiv_rdk/README.md` 编译或安装 Python 绑定。
 * 确保 `PYTHONPATH` 中包含 RDK 的路径。
@@ -71,9 +66,9 @@ pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 
 位于 `gello/` 目录，适合基于关节映射的精细操作采集。建议使用 `data_collection_v2` 版本。
 
-### 核心脚本 (`gello/data_collection_v2`)
+### 核心脚本 (`gello/data_collection_v2/`)
 
-* **采集**: `` (推荐: 阻抗控制 + H5 存储)
+* **采集**: `zhq_gello_v4.py` (推荐: 阻抗控制 + H5 存储)
 * **调试**: `debug_pipeline/check_data.py` (查看相机流)
 * **回放**: `replay/replay_h5_tcp.py` (TCP 空间回放验证)
 
