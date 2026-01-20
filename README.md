@@ -1,10 +1,5 @@
-这是一份经过完整排版、可以直接复制到 GitHub `README.md` 的代码。
 
-我已将 FAQ（常见问题）部分设置为**可折叠**，以保持文档整洁；同时优化了表格和目录结构的显示效果。
 
-请点击下方代码块右上角的 **"Copy"** 按钮，一键复制所有内容。
-
-```markdown
 <div align="center">
 
 # 🤖 Flexiv Robot Data Collection System
@@ -25,6 +20,30 @@
 </div>
 
 ---
+
+## 🛠️ 硬件支持 (Hardware Support)
+
+| 模块 | 核心特性 | 机械臂型号 | 遥操作设备 | 视觉/传感器 |
+| :--- | :--- | :--- | :--- | :--- |
+| **GELLO** | **关节映射**<br>低成本外骨骼方案 | Rizon 4s / 4 / 10 | 自制 GELLO 手柄<br>(Dynamixel 舵机) | Intel RealSense<br>IMX415 |
+| **UMI** | **末端位姿 (6-DoF)**<br>手持通用夹爪 | Rizon 4s / 4 / 10 | UMI Gripper +<br>HTC Vive / XVisio | GoPro (鱼眼)<br>RealSense |
+
+---
+
+## 📦 安装与配置 (Installation)
+
+### 1. 基础环境设置
+
+⚠️ **注意**：本项目包含大文件，请务必配置 Git LFS。
+
+```bash
+# 1. 克隆仓库
+git clone [https://github.com/summerjj1/Flexiv_Yuanzhi_data_collection.git](https://github.com/summerjj1/Flexiv_Yuanzhi_data_collection.git)
+cd Flexiv_Yuanzhi_data_collection
+
+# 2. 拉取大文件 (重要)
+git lfs install
+git lfs pull
 
 ## 🛠️ 硬件支持 (Hardware Support)
 
