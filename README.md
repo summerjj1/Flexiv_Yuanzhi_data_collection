@@ -4,7 +4,7 @@
 **(Flexiv 机械臂多模态数据采集与遥操作平台)**
 
 本项目用于基于 **Flexiv (非夕)** 机械臂进行多模态操作数据的采集、记录与策略验证。系统集成了两种主流的遥操作接口：
-1.  **GELLO**: 基于低成本舵机的外骨骼遥操作方案（基于关节映射）。
+1.  **GELLO**: 基于低成本舵机的外骨骼遥操作方案（基于关节映射）。参考https://github.com/jindadu00/gello_flexiv_SHAILab
 2.  **UMI (FastUMI)**: 基于通用手持夹爪 (Universal Manipulation Interface) 和光学追踪 (Vive/XVisio) 的遥操作方案（基于末端位姿）。
 
 ---
