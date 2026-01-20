@@ -1,5 +1,10 @@
-Markdown
+这是一份经过完整排版、可以直接复制到 GitHub `README.md` 的代码。
 
+我已将 FAQ（常见问题）部分设置为**可折叠**，以保持文档整洁；同时优化了表格和目录结构的显示效果。
+
+请点击下方代码块右上角的 **"Copy"** 按钮，一键复制所有内容。
+
+```markdown
 <div align="center">
 
 # 🤖 Flexiv Robot Data Collection System
@@ -34,7 +39,7 @@ Markdown
 
 ### 1. 基础环境设置
 
-本项目包含大文件，请务必配置 Git LFS。
+⚠️ **注意**：本项目包含大文件，请务必配置 Git LFS。
 
 ```bash
 # 1. 克隆仓库
@@ -44,11 +49,14 @@ cd Flexiv_Yuanzhi_data_collection
 # 2. 拉取大文件 (重要)
 git lfs install
 git lfs pull
-2. Python 环境依赖
+
+```
+
+### 2. Python 环境依赖
+
 建议使用 Conda 管理环境 (Python 3.10+)：
 
-Bash
-
+```bash
 # 创建并激活环境
 conda create -n flexiv_collect python=3.10
 conda activate flexiv_collect
@@ -63,57 +71,73 @@ pip install -e .
 
 # 安装其他核心依赖
 pip install numpy h5py opencv-python rerun-sdk pyrealsense2
-注意: 请参照 flexiv_rdk/README.md 确保 RDK 路径已添加至环境变量 PYTHONPATH 中。
 
-🎮 模块一：GELLO 遥操作
-位于 gello/ 目录，适合基于关节映射的精细操作采集。
+```
 
-🚀 快速开始
-连接硬件: 确保 GELLO 手柄 USB 连接正常并获得权限。
+> **提示**: 请参照 `flexiv_rdk/README.md` 确保 RDK 路径已添加至环境变量 `PYTHONPATH` 中。
 
-启动采集:
+---
 
-Bash
+## 🎮 模块一：GELLO 遥操作
 
+位于 `gello/` 目录，适合基于关节映射的精细操作采集。
+
+### 🚀 快速开始
+
+1. **连接硬件**: 确保 GELLO 手柄 USB 连接正常并获得权限。
+2. **启动采集**:
+
+```bash
 cd gello/data_collection_v2/
 
 # 运行采集脚本 (请根据实际情况修改脚本中的 IP 和型号)
 python zhq_gello_v4.py
-🕹️ 操作指南
-Start / Pause: 按 i 键
 
-Save: 按 b 键
+```
 
-🔧 常用脚本
-采集: zhq_gello_v4.py (推荐: 阻抗控制 + H5 存储)
+### 🕹️ 操作指南
 
-调试: debug_pipeline/check_data.py (查看相机流)
+* `Start` / `Pause`: 按 **`i`** 键
+* `Save`: 按 **`b`** 键
 
-回放: replay/replay_h5_tcp.py (TCP 空间回放验证)
+### 🔧 常用脚本
 
-🖐️ 模块二：UMI / FastUMI
-位于 umi/ 目录，支持基于末端位姿的直观遥操作，集成 FastUMI 框架。
+* **采集**: `zhq_gello_v4.py` (推荐: 阻抗控制 + H5 存储)
+* **调试**: `debug_pipeline/check_data.py` (查看相机流)
+* **回放**: `replay/replay_h5_tcp.py` (TCP 空间回放验证)
 
-1. 环境准备
-请进入 umi/release-1119 安装特定驱动：
+---
 
-Bash
+## 🖐️ 模块二：UMI / FastUMI
 
+位于 `umi/` 目录，支持基于末端位姿的直观遥操作，集成 FastUMI 框架。
+
+### 1. 环境准备
+
+请进入 `umi/release-1119` 安装特定驱动：
+
+```bash
 cd umi/release-1119
 bash install-python.sh
 bash install-ros2.sh  # 如需 ROS2 通信
 
 # 安装追踪器驱动 (根据 Ubuntu 版本选择)
 sudo dpkg -i XVSDK_jammy_amd64_1119.deb  # For Ubuntu 22.04
-2. 硬件配对
-Bash
 
+```
+
+### 2. 硬件配对
+
+```bash
 cd umi/FastUMI_Data_Collection/start_process
 python get_device_info.py   # 获取设备信息
 bash pairing_process.sh     # 启动配对服务
-3. 数据采集与验证
-Bash
 
+```
+
+### 3. 数据采集与验证
+
+```bash
 # 启动采集 (带缓冲机制)
 cd umi/FastUMI_Data_Collection/data_collector_opt
 python single_session_data_collector_buffered.py
@@ -121,9 +145,14 @@ python single_session_data_collector_buffered.py
 # 策略验证 (Rollout)
 cd ../../
 python rollout_flexiv.py --checkpoint /path/to/policy.ckpt
-📂 目录结构 (Directory Structure)
-Plaintext
 
+```
+
+---
+
+## 📂 目录结构 (Directory Structure)
+
+```text
 .
 ├── gello/                       # GELLO 模块 (关节映射)
 │   ├── data_collection_v2/      # [CORE] 新版采集代码
@@ -139,32 +168,50 @@ Plaintext
 │
 ├── flexiv_rdk/                  # Flexiv 机器人官方 SDK
 └── EmbodiedDeployment/          # 部署工具库
-❓ 常见问题 (FAQ)
-<details> <summary><strong>Q1: Push/Pull 失败，提示 "Large files detected"？</strong></summary>
 
-原因: umi/release-1119 中的驱动包超过了 GitHub 单文件限制。
+```
 
-解决: 必须安装 Git LFS。运行 git lfs install 后重新 pull。
+---
+
+## ❓ 常见问题 (FAQ)
+
+<details>
+<summary><strong>Q1: Push/Pull 失败，提示 "Large files detected"？</strong></summary>
+
+* **原因**: `umi/release-1119` 中的驱动包超过了 GitHub 单文件限制。
+* **解决**: 必须安装 Git LFS。运行 `git lfs install` 后重新 pull。如果是历史 commit 问题，请使用 `git lfs migrate`。
 
 </details>
 
-<details> <summary><strong>Q2: 串口权限报错 (Permission denied: '/dev/ttyUSB0')？</strong></summary>
+<details>
+<summary><strong>Q2: 串口权限报错 (Permission denied: '/dev/ttyUSB0')？</strong></summary>
 
-解决:
-
-Bash
-
+* **解决**:
+```bash
 sudo chmod 777 /dev/ttyUSB0
 # 永久生效：sudo usermod -a -G dialout $USER
-</details>
 
-<details> <summary><strong>Q3: 机械臂连接失败？</strong></summary>
+```
 
-检查电脑 IP 是否与机械臂在同一网段。
 
-确认 flexiv_rdk 编译成功且能被 Python import。
 
 </details>
 
-📝 License
-本项目遵循 MIT License. Maintainer: summerjj1
+<details>
+<summary><strong>Q3: 机械臂连接失败？</strong></summary>
+
+1. 检查电脑 IP 是否与机械臂在同一网段。
+2. 确认 `flexiv_rdk` 编译成功且能被 Python `import`。
+
+</details>
+
+---
+
+## 📝 License
+
+本项目遵循 [MIT License](https://www.google.com/search?q=LICENSE).
+Maintainer: [summerjj1](https://www.google.com/search?q=https://github.com/summerjj1)
+
+```
+
+```
