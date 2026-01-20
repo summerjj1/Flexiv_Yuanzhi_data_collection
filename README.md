@@ -109,7 +109,7 @@ pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 ```bash
 cd gello/data_collection_v2/
 
-# 运行采集脚本 (请根据实际情况修改脚本中的 IP 和型号)
+# 运行采集脚本 (请根据实际情况修改脚本中的 机械臂的序列号 和夹爪型号)
 python zhq_gello_v4.py
 
 ```
