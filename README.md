@@ -42,10 +42,17 @@ git lfs pull
 
 建议使用 Conda 创建独立环境 (Python 3.10+)：
 
-```bash
+```
+1.新建环境
 conda create -n flexiv_collect python=3.10
 conda activate flexiv_collect
-pip install -r requirements.txt  # 如果根目录有提供
+2. 安装Flexiv rdk
+cd flexiv_rdk
+python3.10 -m pip install numpy spdlog flexivrdk
+3. 安装xdeploy
+cd EmbodiedDeployment
+pip install -e.
+如果根目录有提供
 # 或者手动安装核心库
 pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 
@@ -66,7 +73,7 @@ pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 
 ### 核心脚本 (`gello/data_collection_v2`)
 
-* **采集**: `back/teleop_gello_imx415_h5_impedance.py` (推荐: 阻抗控制 + H5 存储)
+* **采集**: `` (推荐: 阻抗控制 + H5 存储)
 * **调试**: `debug_pipeline/check_data.py` (查看相机流)
 * **回放**: `replay/replay_h5_tcp.py` (TCP 空间回放验证)
 
@@ -76,7 +83,7 @@ pip install numpy h5py opencv-python rerun-sdk pyrealsense2
 2. **启动采集**:
 ```bash
 cd gello/data_collection_v2/zhq_gello_v4.py
-# 需替换为实际的机械臂 IP 和本机 IP
+# 需替换为实际的机械臂 型号 和夹爪型号
 python zhq_gello_v4.py 
 
 ```
